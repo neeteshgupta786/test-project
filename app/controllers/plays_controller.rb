@@ -1,14 +1,14 @@
 class PlaysController < ApplicationController
   def new
     @play = Play.new
-    @plays = Play.all
+    @plays = Play.desc_order
 
     prepare_hash
   end
 
   def create
     @play = Play.create(plays_params)
-    @plays = Play.all
+    @plays = Play.desc_order
   end
 
   private
