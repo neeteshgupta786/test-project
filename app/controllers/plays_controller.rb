@@ -8,6 +8,7 @@ class PlaysController < ApplicationController
 
   def create
     @play = Play.create(plays_params)
+    @plays = Play.all
   end
 
   private
