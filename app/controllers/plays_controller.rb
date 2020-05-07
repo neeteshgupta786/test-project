@@ -17,7 +17,9 @@ class PlaysController < ApplicationController
   end
 
   def prepare_hash
-    urls = Image.last.images.map{|image| url_for(image)}
+    # sample method of array is used to get 10 random elements from the array
+    urls = Image.last.images.map{|image| url_for(image)}.sample(10)
+
     @req_hash, count = [{}, 0]
     10.times do |index|
       count = 0 if urls[count].nil?
