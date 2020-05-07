@@ -1,0 +1,29 @@
+<h1>Counter: <span id='counter'></span></h1>
+
+<%= form_with model: @play do |f| %>
+
+  <%= f.hidden_field :timer_value, data: {"req-hash": @req_hash} %>
+  <%= f.hidden_field :url %>
+
+  <img src="" id="image" height="200" width="200">
+  <br>
+  <%= f.submit 'Submit' %>
+<% end %>
+
+<%= link_to "Back to home page", root_path %>
+
+<br>
+<br>
+
+<table style="width:100%">
+  <tr>
+    <th>Counter Value</th>
+    <th>Image</th>
+  </tr>
+  <% @plays.each do |play| %>
+    <tr>
+      <td><%= play.timer_value %></td>
+      <td><img src="<%= play.url %>" id="image" height="200" width="250"></td>
+    </tr>
+  <% end %>
+</table>
