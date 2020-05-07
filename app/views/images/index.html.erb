@@ -1,0 +1,9 @@
+<hr>
+<%= link_to "Play Game", plays_path %>
+<hr>
+<br>
+
+<%= form_with url: images_path, html: {multipart: true} do |f| %>
+  <%= f.file_field :images, accept: 'image/png, image/gif, image/jpeg, image/jpg', multiple: true %>
+  <%= f.submit 'Upload Picture' %>
+<% end %>
